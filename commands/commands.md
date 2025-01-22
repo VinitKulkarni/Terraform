@@ -55,4 +55,5 @@ once this command is executed them terraform mark that resource as "tainted". wh
 `$terraform workspace delete dev` (delete the dev workspace. dont be in that workspace while deleting) <br>
 
 ### create tfstate file for already created infra
-`$terraform import resourcename` <br>
+Syntax: `$terraform import <resource_type>.<resource_name> <resource_id>`
+ex: `terraform import aws_instance.label2 instance_id`
