@@ -1,17 +1,17 @@
 ### To check what all resources the script will create:
-$terraform plan
+$terraform plan <br>
 
 ### provide values to the variables during run-time:
-Syntax: $terraform plan -var="variable_name=value"
-$terraform plan -var "username=vinit" -var "age=30"
-$terraform apply -var="region=us-west-2" -var="instance_type=t2.micro"
+Syntax: $terraform plan -var="variable_name=value" <br>
+$terraform plan -var "username=vinit" -var "age=30" <br>
+$terraform apply -var="region=us-west-2" -var="instance_type=t2.micro" <br>
 
 ### provide variable values for different environments like prod, dev, test
-Syntax: $terraform plan -var-file=filename.tfvars
-$terraform apply -var-file=filename.tfvars
-$terraform plan -var-file=prod-variables.tfvars
-$terraform apply -var-file=test-variables.tfvars
-NOTE: prod-variables.tfvars and test-variables.tfvars file should be already present in root directory
+Syntax: $terraform plan -var-file=filename.tfvars <br>
+$terraform apply -var-file=filename.tfvars <br>
+$terraform plan -var-file=prod-variables.tfvars <br>
+$terraform apply -var-file=test-variables.tfvars <br>
+NOTE: prod-variables.tfvars and test-variables.tfvars file should be already present in root directory <br>
 
 ### to get variable from local .env 
 declare variable like this: 
