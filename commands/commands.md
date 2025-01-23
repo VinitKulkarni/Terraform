@@ -52,9 +52,9 @@ but now it is out of sync. To make it sync use this command <br>
 $terraform refresh
 ```
 
-
-### to make the indentation correct
-``` shell $terraform fmt
+### to make the indentation correct in script:
+``` shell
+$terraform fmt
 ```
 
 ### somethimes the resources created in cloud with script can damange after changing the script. so you make them correct. you mark them as "taint". so that resource will be recreated.
