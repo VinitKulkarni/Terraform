@@ -1,5 +1,7 @@
-### To check what all resources the script will create:
-`$terraform plan` <br>
+### To check what all resources the script will create in cloud:
+``` shell
+$terraform plan
+```
 
 ### provide values to the variables during run-time:
 ``` shell
@@ -18,37 +20,50 @@ NOTE: prod-variables.tfvars and test-variables.tfvars file should be already pre
 ```
 
 ### to get variable from local .env 
-declare variable like this: <br>
+Declare variable like this: <br>
 export TF_VAR_variablename=value <br>
 echo $TF_VAR_variablename <br>
 output: value of that variable will be displayed 
 
-### to check the list of providers in terraform script
-`$terraform providers` <br>
+### to check the list of providers in terraform script:
+``` shell
+$terraform providers
+```
 
 ### to install the plugins and related configuration (shows like creating backend or initalizing backend)
-`$terraform init` <br>
+``` shell
+$terraform init
+```
 
 ### to create the real infra:
-`$terraform apply` <br>
+``` shell
+$terraform apply
+```
 
 ### to validate the syntax and configuration file. Not doing anything with cloud. simply checks all the files for syntax errors:
-`$terraform validate` <br>
+```shell
+$terraform validate
+```
 
 ### if you change manually anything in cloud and tfstate file is having something, that time use this command
 ex: if description of ec2 is manually changed, but you have not mentioned anything in script and according to script tfstate file is created.
 but now it is out of sync. To make it sync use this command <br>
-`$terraform refresh`
+``` shell
+$terraform refresh
+```
 
 
 ### to make the indentation correct
-`$terraform fmt` <br>
+``` shell $terraform fmt
+```
 
 ### somethimes the resources created in cloud with script can damange after changing the script. so you make them correct. you mark them as "taint". so that resource will be recreated.
 ### NOTE: be caustion while taint (bcz it is not recommonded)
-Syntax `$terraform taint resourcename`  (resourcename will be found in tfstate file) <br>
-`$terraform taint label1.label2` <br>
-ex: `$terraform taint aws_instance.label2` <br>
+``` shell
+Syntax $terraform taint resourcename (resourcename will be found in tfstate file) <br>
+$terraform taint label1.label2
+ex: $terraform taint aws_instance.label2
+```
 once this command is executed them terraform mark that resource as "tainted". when you do terraform plan or terraform apply command that time, the taint resoruce will be recreated <br>
 
 ### workspace (for different envirnoment)
