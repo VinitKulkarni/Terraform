@@ -8,12 +8,14 @@ $terraform plan -var "username=vinit" -var "age=30"
 $terraform apply -var="region=us-west-2" -var="instance_type=t2.micro"
 ```
 
-### provide variable values for different environments like prod, dev, test
-Syntax: `$terraform plan -var-file=filename.tfvars` <br>
-`$terraform apply -var-file=filename.tfvars` <br>
-`$terraform plan -var-file=prod-variables.tfvars` <br>
-`$terraform apply -var-file=test-variables.tfvars` <br>
-NOTE: prod-variables.tfvars and test-variables.tfvars file should be already present in root directory <br>
+### provide variable values for different environments like prod, dev, test:
+``` shell
+Syntax: $terraform plan -var-file=filename.tfvars
+$terraform apply -var-file=filename.tfvars
+$terraform plan -var-file=prod-variables.tfvars
+$terraform apply -var-file=test-variables.tfvars
+NOTE: prod-variables.tfvars and test-variables.tfvars file should be already present in root directory
+```
 
 ### to get variable from local .env 
 declare variable like this: <br>
@@ -50,12 +52,16 @@ ex: `$terraform taint aws_instance.label2` <br>
 once this command is executed them terraform mark that resource as "tainted". when you do terraform plan or terraform apply command that time, the taint resoruce will be recreated <br>
 
 ### workspace (for different envirnoment)
-`$terraform workspace list` (all workspace will be shown) <br>
-`$terraform workspace new dev` (new dev workspace is created) <br>
-`$terraform workspace show` (it will show you are in which workspace) <br>
-`$$terraform workspace select dev` (to switch to another workspace) <br>
-`$terraform workspace delete dev` (delete the dev workspace. dont be in that workspace while deleting) <br>
+``` shell
+$terraform workspace list (all workspace will be shown)
+$terraform workspace new dev (new dev workspace is created)
+$terraform workspace show (it will show you are in which workspace)
+$$terraform workspace select dev (to switch to another workspace)
+$terraform workspace delete dev (delete the dev workspace. dont be in that workspace while deleting)
+```
 
 ### create tfstate file for already created infra
+``` shell
 Syntax: `$terraform import <resource_type>.<resource_name> <resource_id>` <br>
 ex: `terraform import aws_instance.label2 instance_id`
+```
